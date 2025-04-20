@@ -18,8 +18,7 @@ function AccountOperations() {
 
   function handleDeposit() {
     if (!depositAmount) return;
-    // dispatch(deposit(depositAmount, currency));
-    dispatch(deposit(depositAmount));
+    dispatch(deposit(depositAmount, currency));
     setDepositAmount('');
     setCurrency('USD');
   }
@@ -51,7 +50,7 @@ function AccountOperations() {
           <input
             type="number"
             value={depositAmount}
-            onChange={(e) => setDepositAmount(+e.target.value)}
+            onChange={(e) => setDepositAmount(e.target.value)}
           />
           <select
             value={currency}
